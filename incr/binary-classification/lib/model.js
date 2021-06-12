@@ -24,11 +24,14 @@
 
 var setReadOnly = require( '@stdlib/utils/define-nonenumerable-read-only-property' );
 var setReadOnlyAccessor = require( '@stdlib/utils/define-nonenumerable-read-only-accessor' );
-var gdot = require( '@stdlib/blas/base/gdot' );
+var gdot = require( '@stdlib/blas/base/gdot' ).ndarray;
+var gaxpy = require( '@stdlib/blas/base/gaxpy' ).ndarray;
 var dcopy = require( '@stdlib/blas/base/dcopy' );
 var dscal = require( '@stdlib/blas/base/dscal' );
 var max = require( '@stdlib/math/base/special/max' );
 var exp = require( '@stdlib/math/base/special/exp' );
+var pow = require( '@stdlib/math/base/special/pow' );
+var sigmoid = require( '@stdlib/math/base/special/expit' );
 var Float64Array = require( '@stdlib/array/float64' );
 var ndarray = require( '@stdlib/ndarray/ctor' );
 
@@ -40,6 +43,7 @@ var MIN_SCALE = 1.0e-11;
 var LEARNING_RATE_METHODS = {
 	'basic': '_basicLearningRate',
 	'constant': '_constantLearningRate',
+	'invscaling': '_inverseScalingLearningRate',
 	'pegasos': '_pegasosLearningRate'
 };
 var LOSS_METHODS = {
@@ -80,8 +84,7 @@ function Model( N, opts ) {
 	this._opts = opts;
 
 	this._scaleFactor = 1.0;
-	this._squaredNorm = 0.0;
-	this._t = 0; // counter
+	this._t = 0; // iteration counter (i.e., number of updates)
 
 	// Determine the learning rate function:
 	this._learningRateMethod = LEARNING_RATE_METHODS[ opts.learningRate[ 0 ] ];
@@ -115,40 +118,16 @@ function Model( N, opts ) {
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_add', function add( x, scale ) {
-	var xlen;
-	var xbuf;
-	var ox;
-	var sx;
-	var dp;
-	var w;
-	var s;
-	var v;
-	var i;
+	var s = scale / this._scaleFactor;
+	var w = this._weights;
 
-	w = this._weights;
-	s = this._scaleFactor;
-
-	xbuf = x.data;
-	xlen = x.shape[ 0 ];
-	sx = x.strides[ 0 ];
-	ox = x.offset;
-
-	dp = 0.0; // dot product
-	for ( i = 0; i < xlen; i++ ) {
-		v = xbuf[ ox+(sx*i) ] * scale;
-		dp += w[ i ] * v;
-		w[ i ] += v / s;
-	}
-	v = gdot( xlen, xbuf, 1, xbuf, 1 );
+	// Scale `x` and add to the model weight vector:
+	gaxpy( x.shape[ 0 ], s, x.data, x.strides[ 0 ], x.offset, w, 1, 0 );
 
 	// If an intercept is assumed, treat `x` as containing one additional element equal to one...
 	if ( this._opts.intercept ) {
-		v += 1.0;
-		dp += w[ i ] * scale;
-		w[ i ] += scale / s;
+		w[ this._N ] += s;
 	}
-	this._squaredNorm += ( v*scale*scale ) + ( 2.0*s*dp );
-
 	return this;
 });
 
@@ -195,7 +174,7 @@ setReadOnly( Model.prototype, '_constantLearningRate', function constant() {
 * @returns {number} dot product
 */
 setReadOnly( Model.prototype, '_dot', function dot( x ) {
-	var v = gdot( this._N, this._weights, 1, x.data, x.strides[ 0 ] );
+	var v = gdot( this._N, this._weights, 1, 0, x.data, x.strides[ 0 ], x.offset ); // eslint-disable-line max-len
 	if ( this._opts.intercept ) {
 		v += this._weights[ this._N ];
 	}
@@ -237,6 +216,30 @@ setReadOnly( Model.prototype, '_hingeLoss', function hingeLoss( x, y ) {
 		this._add( x, y*eta );
 	}
 	return this;
+});
+
+/**
+* Computes a learning rate according to an inverse scaling formula.
+*
+* ## Notes
+*
+* -   The inverse scaling formula is defined as
+*
+*     ```tex
+*     \eta = \frac{\eta_0}{t^{k}}
+*     ```
+*
+*     where \\(\eta_0\\) is an initial learning rate, \\(t\\) is the current iteration, and \\(k\\) is an exponent controlling how quickly the learning rate decreases.
+*
+* @private
+* @name _inverseScalingLearningRate
+* @memberof Model.prototype
+* @type {Function}
+* @returns {number} learning rate
+*/
+setReadOnly( Model.prototype, '_inverseScalingLearningRate', function invscaling() {
+	var params = this._opts.learningRate;
+	return params[ 1 ] / pow( this._t, params[ 2 ] );
 });
 
 /**
@@ -297,6 +300,12 @@ setReadOnly( Model.prototype, '_logLoss', function logLoss( x, y ) {
 *
 *     with \\(w\\) being the model weight vector and \\(b\\) being the intercept.
 *
+* ## References
+*
+* -   Zhang, Tong. 2004. "Solving Large Scale Linear Prediction Problems Using Stochastic Gradient Descent Algorithms." In _Proceedings of the Twenty-First International Conference on Machine Learning_, 116. New York, NY, USA: Association for Computing Machinery. doi:[10.1145/1015330.1015332][@zhang:2004a].
+*
+* [@zhang:2004a]: https://doi.org/10.1145/1015330.1015332
+*
 * @private
 * @name _modifiedHuberLoss
 * @memberof Model.prototype
@@ -322,7 +331,9 @@ setReadOnly( Model.prototype, '_modifiedHuberLoss', function modifiedHuber( x, y
 *
 * ## References
 *
-* -   Shalev-Shwartz, S., Singer, Y., Srebro, N., & Cotter, A. (2011). Pegasos: Primal estimated sub-gradient solver for SVM. Mathematical Programming, 127(1), 3–30. doi:10.1007/s10107-010-0420-4
+* -   Shalev-Shwartz, Shai, Yoram Singer, Nathan Srebro, and Andrew Cotter. 2011. "Pegasos: primal estimated sub-gradient solver for SVM." _Mathematical Programming_ 127 (1): 3–30. doi:[10.1007/s10107-010-0420-4][@shalevshwartz:2011a].
+*
+* [@shalevshwartz:2011a]: https://doi.org/10.1007/s10107-010-0420-4
 *
 * @private
 * @name _pegasos
@@ -357,6 +368,10 @@ setReadOnly( Model.prototype, '_pegasosLearningRate', function pegasos() {
 *
 * -   The perceptron loss function does not update the model weight vector when the response is correctly classified.
 *
+* ## References
+*
+* -   Rosenblatt, Frank. 1957. "The Perceptron–a perceiving and recognizing automaton." 85-460-1. Buffalo, NY, USA: Cornell Aeronautical Laboratory.
+*
 * @private
 * @name _perceptronLoss
 * @memberof Model.prototype
@@ -375,7 +390,7 @@ setReadOnly( Model.prototype, '_perceptronLoss', function perceptron( x, y ) {
 });
 
 /**
-* Peforms L2 regularization of the model weights.
+* Performs L2 regularization of the model weights.
 *
 * @private
 * @name _regularize
@@ -405,7 +420,6 @@ setReadOnly( Model.prototype, '_regularize', function regularize( eta ) {
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_scale', function scale( factor ) {
-	var w;
 	var s;
 	if ( factor <= 0.0 ) {
 		throw new RangeError( 'invalid argument. Attempting to scale a weight vector by a nonpositive value. This is likely due to too large a value of `eta*lambda`. Value: `' + factor + '`.' );
@@ -413,11 +427,10 @@ setReadOnly( Model.prototype, '_scale', function scale( factor ) {
 	// Check whether we need to scale the weight vector to unity in order to avoid numerical issues...
 	s = this._scaleFactor;
 	if ( s < MIN_SCALE ) {
-		w = this._weights;
-		dscal( w.length, s, w, 1 );
+		// Note: we only scale/shrink the feature weights, not the intercept...
+		dscal( this._N, s, this._weights, 1 );
 		this._scaleFactor = 1.0;
 	}
-	this._squaredNorm *= factor * factor;
 	this._scaleFactor *= factor;
 	return this;
 });
@@ -472,7 +485,7 @@ setReadOnlyAccessor( Model.prototype, 'coefficients', function coefficients() {
 	var c = this._coefficients.data;
 	var w = this._weights;
 	dcopy( w.length, w, 1, c, 1 );
-	dscal( w.length, this._scaleFactor, c, 1 );
+	dscal( this._N, this._scaleFactor, c, 1 );
 	return this._coefficients;
 });
 
@@ -500,11 +513,16 @@ setReadOnlyAccessor( Model.prototype, 'nfeatures', function nfeatures() {
 * @returns {number} response value
 */
 setReadOnly( Model.prototype, 'predict', function predict( x, type ) {
+	// TODO: refactor to support providing a matrix
 	var v = this._dot( x );
-	if ( type === 'probability' ) {
-		return 1.0 / ( 1.0 + exp( -v ) );
+	if ( type === 'label' ) {
+		return ( v > 0 ) ? 1 : -1;
 	}
-	return v;
+	if ( type === 'probability' ) {
+		return sigmoid( v );
+	}
+	// type === 'linear'
+	return v; // linear predictor
 });
 
 /**

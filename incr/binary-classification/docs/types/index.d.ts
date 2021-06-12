@@ -34,11 +34,30 @@ interface Options {
 
 	/**
 	* Learning rate function and associated parameters (default: `['basic']`).
+	*
+	* ## Notes
+	*
+	* -   Must be one of the following:
+	*
+	*     -   `['constant', ...]`: constant learning rate function. To set the learning rate, provide a second array element. By default, when the learn rate function is 'constant', the learning rate is set to `0.02`.
+	*     -   `['basic']`: basic learning rate function according to the formula `10/(10+t)` where `t` is the current iteration.
+	*     -   `['invscaling', ...]`: inverse scaling learning rate function according to the formula `eta0/pow(t, power_t)` where `eta0` is the initial learning rate and `power_t` is the exponent controlling how quickly the learning rate decreases. To set the initial learning rate, provide a second array element. By default, the initial learning rate is `0.02`. To set the exponent, provide a third array element. By default, the exponent is `0.5`.
+	*     -   `['pegasos']`: Pegasos learning rate function according to the formula `1/(lambda*t)` where `t` is the current iteration and `lambda` is the regularization parameter.
 	*/
 	learningRate?: ArrayLike<any>;
 
 	/**
 	* Loss function (default: `'log'`).
+	*
+	* ## Notes
+	*
+	* -   Must be one of the following:
+	*
+	*     -   `hinge`: hinge loss function. Corresponds to a soft-margin linear Support Vector Machine (SVM), which can handle non-linearly separable data.
+	*     -   `log`: logistic loss function. Corresponds to Logistic Regression.
+	*     -   `modifiedHuber`: Huber loss function variant for classification.
+	*     -   `perceptron`: hinge loss function without a margin. Corresponds to the original Perceptron by Rosenblatt.
+	*     -   `squaredHinge`: squared hinge loss function SVM (L2-SVM).
 	*/
 	loss?: 'hinge' | 'log' | 'modifiedHuber' | 'perceptron' | 'squaredHinge';
 
@@ -68,12 +87,13 @@ interface Accumulator {
 	* Predicts the response value for an observation vector `x`.
 	*
 	* @param x - feature vector
-	* @param type - `probability` or `link` (default: `'link'`)
+	* @param type - `label`, `probability`, or `linear` (default: `'label'`)
 	* @throws first argument must be a one-dimensional ndarray
 	* @throws first argument must be a one-dimensional ndarray whose length matches number of features
+	* @throws second argument must be compatible with the model loss function
 	* @returns response value
 	*/
-	predict( x: ndarray, type?: 'probability' | 'link' ): number;
+	predict( x: ndarray, type?: 'label' | 'probability' | 'linear' ): number;
 }
 
 /**
@@ -82,7 +102,7 @@ interface Accumulator {
 * ## Method
 *
 * -   The sub-gradient of the loss function is estimated for each datum and the classification model is updated incrementally, with a decreasing learning rate and regularization of model feature weights using L2 regularization.
-* -   Stochastic gradient descent is sensitive to the scaling of the features. One is advised to either scale each feature to `[0,1]` or `[-1,1]` or to transform each feature into z-scores with zero mean and unit variance. One should keep in mind that the same scaling has to be applied to test vectors in order to obtain accurate predictions.
+* -   Stochastic gradient descent is sensitive to the scaling of the features. One is advised to either scale each feature to `[0,1]` or `[-1,1]` or to transform each feature into z-scores with zero mean and unit variance. One should keep in mind that the same scaling has to be applied to training data in order to obtain accurate predictions.
 * -   In general, the more data provided to an accumulator, the more reliable the model predictions.
 *
 * ## References

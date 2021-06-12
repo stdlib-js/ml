@@ -41,15 +41,16 @@ var accumulator = incrBinaryClassification( 3 );
 
 The function accepts the following `options`:
 
--   **intercept**: `boolean` indicating whether to include an intercept. If `true`, an element equal to one is implicitly added to each provided feature vector, and, thus, the model performs regularization of the intercept term. If `false`, the model assumes that feature vectors are already centered. Default: `true`.
+-   **intercept**: `boolean` indicating whether to include an intercept. If `true`, an element equal to one is implicitly added to each provided feature vector (note, however, that the model does not perform regularization of the intercept term). If `false`, the model assumes that feature vectors are already centered. Default: `true`.
 
 -   **lambda**: regularization parameter. The regularization parameter determines the amount of shrinkage inflicted on the model coefficients. Higher values reduce the variance of the model coefficient estimates at the expense of introducing bias. Default: `1.0e-4`.
 
 -   **learningRate**: an array-like object containing the learning rate function and associated parameters. The learning rate function decides how fast or slow the model coefficients will be updated toward the optimal coefficients. Must be one of the following:
 
     -   `['constant', ...]`: constant learning rate function. To set the learning rate, provide a second array element. By default, when the learn rate function is 'constant', the learning rate is set to `0.02`.
-    -   `['basic']`: basic learning rate according to the formula `10/(10+t)` where `t` is the current iteration.
-    -   `['pegasos']`: Pegasos learning rate which follows the formula `1/(lambda*t)` where `t` is the current iteration and `lambda` is the regularization parameter.
+    -   `['basic']`: basic learning rate function according to the formula `10/(10+t)` where `t` is the current iteration.
+    -   `['invscaling', ...]`: inverse scaling learning rate function according to the formula `eta0/pow(t, power_t)` where `eta0` is the initial learning rate and `power_t` is the exponent controlling how quickly the learning rate decreases. To set the initial learning rate, provide a second array element. By default, the initial learning rate is `0.02`. To set the exponent, provide a third array element. By default, the exponent is `0.5`.
+    -   `['pegasos']`: [Pegasos][@shalevshwartz:2011a] learning rate function according to the formula `1/(lambda*t)` where `t` is the current iteration and `lambda` is the regularization parameter.
 
     Default: `['basic']`.
 
@@ -57,8 +58,8 @@ The function accepts the following `options`:
 
     -   `hinge`: hinge loss function. Corresponds to a soft-margin linear Support Vector Machine (SVM), which can handle non-linearly separable data.
     -   `log`: logistic loss function. Corresponds to Logistic Regression.
-    -   `modifiedHuber`: Huber loss function variant for classification. 
-    -   `perceptron`: hinge loss function without a margin. Corresponds to the original Perceptron by Rosenblatt.
+    -   `modifiedHuber`: Huber loss function [variant][@zhang:2004a] for classification. 
+    -   `perceptron`: hinge loss function without a margin. Corresponds to the original perceptron by Rosenblatt (1957).
     -   `squaredHinge`: squared hinge loss function SVM (L2-SVM).
 
     Default: `'log'`.
@@ -133,13 +134,11 @@ var acc = incrBinaryClassification( 2 );
 
 // ...
 
-var lp = acc.predict( array( [ 0.5, 2.0 ] ) );
+var label = acc.predict( array( [ 0.5, 2.0 ] ) );
 // returns <number>
 ```
 
-Given a feature vector `x = [x_0, x_1, ...]` and model coefficients `c = [c_0, c_1, ...]`, the linear predictor is equal to `(x_0*c_0) + (x_1*c_1) + ... + c_intercept`.
-
-By default, the method returns the linear predictor. In order to return a prediction probability for the logistic (`log`) and modified Huber (`modifiedHuber`) loss functions, set the second argument to `'probability'`.
+By default, the method returns the predict label (`type='label'`). In order to return a prediction probability of a `+1` response value given either the logistic (`log`) or modified Huber (`modifiedHuber`) loss functions, set the second argument to `'probability'`.
 
 ```javascript
 var array = require( '@stdlib/ndarray/array' );
@@ -155,6 +154,24 @@ var phat = acc.predict( array( [ 0.5, 2.0 ] ), 'probability' );
 // returns <number>
 ```
 
+In order to return the linear predictor (i.e., the signed distance to the hyperplane, which is computed as the dot product between the model coefficients and the provided feature vector `x`, plus the intercept), set the second argument to `'linear'`.
+
+```javascript
+var array = require( '@stdlib/ndarray/array' );
+
+// Create a model with the intercept term:
+var acc = incrBinaryClassification( 2, {
+    'loss': 'log'
+});
+
+// ...
+
+var lp = acc.predict( array( [ 0.5, 2.0 ] ), 'linear' );
+// returns <number>
+```
+
+Given a feature vector `x = [x_0, x_1, ...]` and model coefficients `c = [c_0, c_1, ...]`, the linear predictor is equal to `(x_0*c_0) + (x_1*c_1) + ... + c_intercept`.
+
 </section>
 
 <!-- /.usage -->
@@ -164,7 +181,7 @@ var phat = acc.predict( array( [ 0.5, 2.0 ] ), 'probability' );
 ## Notes
 
 -   The underlying binary classification model performs [L2 regularization][tikhonov-regularization] of model coefficients, shrinking them toward zero by penalizing their squared [euclidean norm][euclidean-norm].
--   [Stochastic gradient descent][stochastic-gradient-descent] is sensitive to the scaling of the features. One is advised to either scale each feature to `[0,1]` or `[-1,1]` or to transform each feature into z-scores with zero mean and unit variance. One should keep in mind that the same scaling has to be applied to test vectors in order to obtain accurate predictions.
+-   [Stochastic gradient descent][stochastic-gradient-descent] is sensitive to the scaling of the features. One is advised to either scale each feature to `[0,1]` or `[-1,1]` or to transform each feature into z-scores with zero mean and unit variance. One should keep in mind that the same scaling has to be applied to training data in order to obtain accurate predictions.
 -   In general, the more data provided to an accumulator, the more reliable the model predictions.
 
 </section>
@@ -203,25 +220,59 @@ for ( i = 0; i < 10000; i++ ) {
 
 // Retrieve model coefficients:
 var coefs = acc();
-console.log( 'Coefficients: %d, %d, %d', coefs.get( 0 ), coefs.get( 1 ), coefs.get( 2 ) );
+console.log( 'Feature coefficients: %d, %d', coefs.get( 0 ), coefs.get( 1 ) );
+console.log( 'Intercept: %d', coefs.get( 2 ) );
 
 // Predict new observations...
 x = array( [ 0.9, 0.1 ] );
-var yhat = acc.predict( x, 'probability' );
-console.log( 'Pr(Y=1)_hat = %d; x1 = %d; x2 = %d', yhat, x.get( 0 ), x.get( 1 ) );
+
+var out = acc.predict( x );
+console.log( 'x = [%d, %d]; label = %d', x.get( 0 ), x.get( 1 ), out );
+
+out = acc.predict( x, 'probability' );
+console.log( 'x = [%d, %d]; P(y=1|x) = %d', x.get( 0 ), x.get( 1 ), out );
+
+out = acc.predict( x, 'linear' );
+console.log( 'x = [%d, %d]; lp = %d', x.get( 0 ), x.get( 1 ), out );
 
 x = array( [ 0.1, 0.9 ] );
-yhat = acc.predict( x, 'link' );
-console.log( 'y_hat = %d; x1 = %d; x2 = %d', yhat, x.get( 0 ), x.get( 1 ) );
+
+out = acc.predict( x );
+console.log( 'x = [%d, %d]; label = %d', x.get( 0 ), x.get( 1 ), out );
+
+out = acc.predict( x, 'probability' );
+console.log( 'x = [%d, %d]; P(y=1|x) = %d', x.get( 0 ), x.get( 1 ), out );
+
+out = acc.predict( x, 'linear' );
+console.log( 'x = [%d, %d]; lp = %d', x.get( 0 ), x.get( 1 ), out );
 
 x = array( [ 0.9, 0.9 ] );
-yhat = acc.predict( x, 'link' );
-console.log( 'y_hat = %d; x1 = %d; x2 = %d', yhat, x.get( 0 ), x.get( 1 ) );
+
+out = acc.predict( x );
+console.log( 'x = [%d, %d]; label = %d', x.get( 0 ), x.get( 1 ), out );
+
+out = acc.predict( x, 'probability' );
+console.log( 'x = [%d, %d]; P(y=1|x) = %d', x.get( 0 ), x.get( 1 ), out );
+
+out = acc.predict( x, 'linear' );
+console.log( 'x = [%d, %d]; lp = %d', x.get( 0 ), x.get( 1 ), out );
 ```
 
 </section>
 
 <!-- /.examples -->
+
+<section class="references">
+
+## References
+
+-   Rosenblatt, Frank. 1957. "The Perceptron–a perceiving and recognizing automaton." 85-460-1. Buffalo, NY, USA: Cornell Aeronautical Laboratory.
+-   Zhang, Tong. 2004. "Solving Large Scale Linear Prediction Problems Using Stochastic Gradient Descent Algorithms." In _Proceedings of the Twenty-First International Conference on Machine Learning_, 116. New York, NY, USA: Association for Computing Machinery. doi:[10.1145/1015330.1015332][@zhang:2004a].
+-   Shalev-Shwartz, Shai, Yoram Singer, Nathan Srebro, and Andrew Cotter. 2011. "Pegasos: primal estimated sub-gradient solver for SVM." _Mathematical Programming_ 127 (1): 3–30. doi:[10.1007/s10107-010-0420-4][@shalevshwartz:2011a].
+
+</section>
+
+<!-- /.references -->
 
 <section class="links">
 
@@ -230,6 +281,10 @@ console.log( 'y_hat = %d; x1 = %d; x2 = %d', yhat, x.get( 0 ), x.get( 1 ) );
 [tikhonov-regularization]: https://en.wikipedia.org/wiki/Tikhonov_regularization
 
 [stochastic-gradient-descent]: https://en.wikipedia.org/wiki/Stochastic_gradient_descent
+
+[@zhang:2004a]: https://doi.org/10.1145/1015330.1015332
+
+[@shalevshwartz:2011a]: https://doi.org/10.1007/s10107-010-0420-4
 
 </section>
 
