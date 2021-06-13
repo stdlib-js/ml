@@ -43,7 +43,7 @@ var ns = {};
 * @type {Function}
 * @see {@link module:@stdlib/ml/incr/binary-classification}
 */
-setReadOnly( ns, 'incrBinaryClassification', require( '@stdlib/ml/incr/binary-classification' ) );
+setReadOnly( ns, 'incrBinaryClassification', require( './../../incr/binary-classification' ) );
 
 /**
 * @name incrkmeans
@@ -52,7 +52,7 @@ setReadOnly( ns, 'incrBinaryClassification', require( '@stdlib/ml/incr/binary-cl
 * @type {Function}
 * @see {@link module:@stdlib/ml/incr/kmeans}
 */
-setReadOnly( ns, 'incrkmeans', require( '@stdlib/ml/incr/kmeans' ) );
+setReadOnly( ns, 'incrkmeans', require( './../../incr/kmeans' ) );
 
 /**
 * @name incrSGDRegression
@@ -61,7 +61,7 @@ setReadOnly( ns, 'incrkmeans', require( '@stdlib/ml/incr/kmeans' ) );
 * @type {Function}
 * @see {@link module:@stdlib/ml/incr/sgd-regression}
 */
-setReadOnly( ns, 'incrSGDRegression', require( '@stdlib/ml/incr/sgd-regression' ) );
+setReadOnly( ns, 'incrSGDRegression', require( './../../incr/sgd-regression' ) );
 
 
 // EXPORTS //

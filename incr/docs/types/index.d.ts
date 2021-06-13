@@ -21,9 +21,9 @@
 /* tslint:disable:max-line-length */
 /* tslint:disable:max-file-line-count */
 
-import incrBinaryClassification = require( '@stdlib/ml/incr/binary-classification' );
-import incrkmeans = require( '@stdlib/ml/incr/kmeans' );
-import incrSGDRegression = require( '@stdlib/ml/incr/sgd-regression' );
+import incrBinaryClassification = require( './../../../incr/binary-classification' );
+import incrkmeans = require( './../../../incr/kmeans' );
+import incrSGDRegression = require( './../../../incr/sgd-regression' );
 
 /**
 * Interface describing the `incr` namespace.

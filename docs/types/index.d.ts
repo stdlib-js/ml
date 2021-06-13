@@ -21,7 +21,7 @@
 /* tslint:disable:max-line-length */
 /* tslint:disable:max-file-line-count */
 
-import incr = require( '@stdlib/ml/incr' );
+import incr = require( './../../incr' );
 
 /**
 * Interface describing the `ml` namespace.
