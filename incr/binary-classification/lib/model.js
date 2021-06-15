@@ -34,6 +34,9 @@ var pow = require( '@stdlib/math/base/special/pow' );
 var sigmoid = require( '@stdlib/math/base/special/expit' );
 var Float64Array = require( '@stdlib/array/float64' );
 var ndarray = require( '@stdlib/ndarray/ctor' );
+var shape2strides = require( '@stdlib/ndarray/base/shape2strides' );
+var numel = require( '@stdlib/ndarray/base/numel' );
+var vind2bind = require( '@stdlib/ndarray/base/vind2bind' );
 
 
 // VARIABLES //
@@ -170,11 +173,13 @@ setReadOnly( Model.prototype, '_constantLearningRate', function constant() {
 * @name _dot
 * @memberof Model.prototype
 * @type {Function}
-* @param {VectorLike} x - input vector
+* @param {NumericArray} buf - ndarray data buffer
+* @param {integer} stride - stride
+* @param {NonNegativeInteger} offset - index offset
 * @returns {number} dot product
 */
-setReadOnly( Model.prototype, '_dot', function dot( x ) {
-	var v = gdot( this._N, this._weights, 1, 0, x.data, x.strides[ 0 ], x.offset ); // eslint-disable-line max-len
+setReadOnly( Model.prototype, '_dot', function dot( buf, stride, offset ) {
+	var v = gdot( this._N, this._weights, 1, 0, buf, stride, offset );
 	if ( this._opts.intercept ) {
 		v += this._weights[ this._N ];
 	}
@@ -210,9 +215,14 @@ setReadOnly( Model.prototype, '_dot', function dot( x ) {
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_hingeLoss', function hingeLoss( x, y ) {
-	var eta = this[ this._learningRateMethod ]();
+	var eta;
+	var d;
+
+	eta = this[ this._learningRateMethod ]();
 	this._regularize( eta );
-	if ( ( y*this._dot( x ) ) < 1.0 ) {
+
+	d = this._dot( x.data, x.strides[ 0 ], x.offset );
+	if ( ( y*d ) < 1.0 ) {
 		this._add( x, y*eta );
 	}
 	return this;
@@ -271,10 +281,17 @@ setReadOnly( Model.prototype, '_inverseScalingLearningRate', function invscaling
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_logLoss', function logLoss( x, y ) {
-	var loss = y / ( 1.0 + exp( y*this._dot( x ) ) );
-	var eta = this[ this._learningRateMethod ]();
+	var loss;
+	var eta;
+	var d;
+
+	eta = this[ this._learningRateMethod ]();
 	this._regularize( eta );
+
+	d = this._dot( x.data, x.strides[ 0 ], x.offset );
+	loss = y / ( 1.0 + exp( y*d ) );
 	this._add( x, eta*loss );
+
 	return this;
 });
 
@@ -315,9 +332,13 @@ setReadOnly( Model.prototype, '_logLoss', function logLoss( x, y ) {
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_modifiedHuberLoss', function modifiedHuber( x, y ) {
-	var eta = this[ this._learningRateMethod ]();
-	var d = y * this._dot( x );
+	var eta;
+	var d;
+
+	eta = this[ this._learningRateMethod ]();
 	this._regularize( eta );
+
+	d = y * this._dot( x.data, x.strides[ 0 ], x.offset );
 	if ( d < -1.0 ) {
 		this._add( x, 4.0*eta*y );
 	} else {
@@ -381,9 +402,14 @@ setReadOnly( Model.prototype, '_pegasosLearningRate', function pegasos() {
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_perceptronLoss', function perceptron( x, y ) {
-	var eta = this[ this._learningRateMethod ]();
+	var eta;
+	var d;
+
+	eta = this[ this._learningRateMethod ]();
 	this._regularize( eta );
-	if ( ( y*this._dot( x ) ) <= 0.0 ) {
+
+	d = this._dot( x.data, x.strides[ 0 ], x.offset );
+	if ( ( y*d ) <= 0.0 ) {
 		this._add( x, y*eta );
 	}
 	return this;
@@ -463,9 +489,13 @@ setReadOnly( Model.prototype, '_scale', function scale( factor ) {
 * @returns {Model} model instance
 */
 setReadOnly( Model.prototype, '_squaredHingeLoss', function squaredHingeLoss( x, y ) {
-	var eta = this[ this._learningRateMethod ]();
-	var d = y * this._dot( x );
+	var eta;
+	var d;
+
+	eta = this[ this._learningRateMethod ]();
 	this._regularize( eta );
+
+	d = y * this._dot( x.data, x.strides[ 0 ], x.offset );
 	if ( d < 1.0 ) {
 		this._add( x, eta*( y-(d*y) ) );
 	}
@@ -502,27 +532,85 @@ setReadOnlyAccessor( Model.prototype, 'nfeatures', function nfeatures() {
 });
 
 /**
-* Predicts the response value for a provided observation vector `x`.
+* Predicts the response value for one or more observation vectors `X`.
 *
 * @private
 * @name predict
 * @memberof Model.prototype
 * @type {Function}
-* @param {VectorLike} x - feature vector
+* @param {ndarray} X - feature vector
 * @param {string} type - prediction type
-* @returns {number} response value
+* @returns {ndarray} ndarray containing response values
 */
-setReadOnly( Model.prototype, 'predict', function predict( x, type ) {
-	// TODO: refactor to support providing a matrix
-	var v = this._dot( x );
-	if ( type === 'label' ) {
-		return ( v > 0 ) ? 1 : -1;
+setReadOnly( Model.prototype, 'predict', function predict( X, type ) {
+	var ndims;
+	var xbuf;
+	var ybuf;
+	var xsh;
+	var ysh;
+	var ord;
+	var ptr;
+	var sxn;
+	var sx;
+	var sy;
+	var ox;
+	var M;
+	var N;
+	var Y;
+	var v;
+	var i;
+
+	// Cache input array properties in case of lazy evaluation:
+	xbuf = X.data;
+	xsh = X.shape;
+	sx = X.strides;
+	ox = X.offset;
+	ord = X.order;
+
+	ndims = xsh.length - 1;
+
+	// The output array shape is the same as the input array shape without the last dimension (i.e., the number of dimensions is reduced by one)...
+	ysh = [];
+	for ( i = 0; i < ndims; i++ ) {
+		ysh.push( xsh[ i ] );
 	}
-	if ( type === 'probability' ) {
-		return sigmoid( v );
+	// Create an output array...
+	if ( ndims === 0 ) {
+		M = 1;
+		ybuf = new Float64Array( 1 );
+		sy = [ 0 ];
+	} else {
+		M = numel( ysh );
+		ybuf = new Float64Array( M );
+		sy = shape2strides( ysh, ord );
 	}
-	// type === 'linear'
-	return v; // linear predictor
+	Y = new ndarray( 'int8', ybuf, ysh, sy, 0, ord );
+
+	// Loop over all observation vectors...
+	N = this._N; // number of features (i.e., size of last `X` dimension)
+	sxn = sx[ ndims ]; // stride of the last `X` dimension
+	for ( i = 0; i < M; i++ ) {
+		// Compute the index offset into the underlying data buffer pointing to the start of the current observation vector:
+		ptr = vind2bind( xsh, sx, ox, ord, i*N, 'throw' );
+
+		// Compute the dot product of the current observation vector with the model weight vector:
+		v = this._dot( xbuf, sxn, ptr );
+
+		// Determine the output value:
+		if ( type === 'label' ) {
+			v = ( v > 0 ) ? 1 : -1;
+		} else if ( type === 'probability' ) {
+			v = sigmoid( v );
+		} // else type === 'linear' (i.e., linear predictor)
+
+		// Set the element in the output array:
+		if ( ndims === 0 ) {
+			Y.iset( v );
+		} else {
+			Y.iset( i, v );
+		}
+	}
+	return Y;
 });
 
 /**
