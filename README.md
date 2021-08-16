@@ -57,6 +57,8 @@ The namespace contains the following sub-namespaces:
 
 <div class="namespace-toc">
 
+-   <span class="signature">[`incr`][@stdlib/ml/incr]</span><span class="delimiter">: </span><span class="description">standard library incremental machine learning algorithms.</span>
+
 </div>
 
 <!-- </toc> -->
@@ -140,6 +142,8 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ml/main/LICENSE
 
 <!-- <toc-links> -->
+
+[@stdlib/ml/incr]: https://github.com/stdlib-js/ml/tree/main/incr
 
 <!-- </toc-links> -->
 
