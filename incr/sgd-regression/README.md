@@ -257,6 +257,22 @@ console.log( 'y_hat = %d; x1 = %d; x2 = %d', accumulator.predict( [0.9, 0.9] ), 
 
 <!-- /.examples -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   [`@stdlib/ml/incr/binary-classification`][@stdlib/ml/incr/binary-classification]: https://github.com/stdlib-js/ml/tree/main/incr/binary-classification`][@stdlib/ml/incr/binary-classification
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 <section class="links">
 
 [euclidean-norm]: https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm
@@ -264,6 +280,12 @@ console.log( 'y_hat = %d; x1 = %d; x2 = %d', accumulator.predict( [0.9, 0.9] ), 
 [l2-regularization]: https://en.wikipedia.org/wiki/Tikhonov_regularization
 
 [stochastic-gradient-descent]: https://en.wikipedia.org/wiki/Stochastic_gradient_descent
+
+<!-- <related-links> -->
+
+[@stdlib/ml/incr/binary-classification]: https://github.com/stdlib-js/ml/tree/main/incr/binary-classification
+
+<!-- </related-links> -->
 
 </section>
 
