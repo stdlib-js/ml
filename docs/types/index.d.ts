@@ -28,13 +28,13 @@ import incr = require( './../../incr' );
 */
 interface Namespace {
 	/**
-	* Standard library incremental machine learning algorithms.
+	* Incremental machine learning algorithms.
 	*/
 	incr: typeof incr;
 }
 
 /**
-* Standard library machine learning algorithms.
+* Machine learning algorithms.
 */
 declare var ns: Namespace;
 
