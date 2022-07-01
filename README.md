@@ -24,14 +24,30 @@ limitations under the License.
 
 > Machine learning algorithms.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ml
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
+var ml = require( '@stdlib/ml' );
 ```
 
 #### ml
@@ -68,8 +84,8 @@ The namespace contains the following sub-namespaces:
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import objectKeys from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils/keys@deno/mod.js';
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
+var objectKeys = require( '@stdlib/utils/keys' );
+var ml = require( '@stdlib/ml' );
 
 console.log( objectKeys( ml ) );
 ```
@@ -95,7 +111,7 @@ console.log( objectKeys( ml ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -112,7 +128,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -125,8 +141,8 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/ml.svg
 [npm-url]: https://npmjs.org/package/@stdlib/ml
 
-[test-image]: https://github.com/stdlib-js/ml/actions/workflows/test.yml/badge.svg
-[test-url]: https://github.com/stdlib-js/ml/actions/workflows/test.yml
+[test-image]: https://github.com/stdlib-js/ml/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/ml/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/ml/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/ml?branch=main
@@ -138,19 +154,20 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[umd]: https://github.com/umdjs/umd
-[es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
-
-[deno-url]: https://github.com/stdlib-js/ml/tree/deno
-[umd-url]: https://github.com/stdlib-js/ml/tree/umd
-[esm-url]: https://github.com/stdlib-js/ml/tree/esm
-
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
 [chat-url]: https://gitter.im/stdlib-js/stdlib/
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
 [stdlib-authors]: https://github.com/stdlib-js/stdlib/graphs/contributors
+
+[umd]: https://github.com/umdjs/umd
+[es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+
+[deno-url]: https://github.com/stdlib-js/ml/tree/deno
+[umd-url]: https://github.com/stdlib-js/ml/tree/umd
+[esm-url]: https://github.com/stdlib-js/ml/tree/esm
+[branches-url]: https://github.com/stdlib-js/ml/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ml/main/LICENSE
 
