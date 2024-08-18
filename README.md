@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@esm/index.mjs';
+import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { incr } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@esm/index.mjs';
+import { incr } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.1-esm/index.mjs';
 ```
 
 #### ml
@@ -91,7 +91,7 @@ The namespace contains the following sub-namespaces:
 <script type="module">
 
 import objectKeys from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils/keys@esm/index.mjs';
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@esm/index.mjs';
+import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.1-esm/index.mjs';
 
 console.log( objectKeys( ml ) );
 
