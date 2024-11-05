@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
+import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.2-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { incr } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
+import { incr } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.2-deno/mod.js';
 ```
 
 #### ml
@@ -86,7 +86,7 @@ The namespace contains the following sub-namespaces:
 
 ```javascript
 import objectKeys from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils/keys@deno/mod.js';
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
+import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.2-deno/mod.js';
 
 console.log( objectKeys( ml ) );
 ```
