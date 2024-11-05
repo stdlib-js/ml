@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/ml/tags). For example,
+
+```javascript
 import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.2-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { incr } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.2-deno/mod.js';
+import { incr } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
 ```
 
 #### ml
@@ -86,7 +91,7 @@ The namespace contains the following sub-namespaces:
 
 ```javascript
 import objectKeys from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils/keys@deno/mod.js';
-import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@v0.3.2-deno/mod.js';
+import ml from 'https://cdn.jsdelivr.net/gh/stdlib-js/ml@deno/mod.js';
 
 console.log( objectKeys( ml ) );
 ```
