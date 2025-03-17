@@ -6,7 +6,76 @@
 
 ## Unreleased (2025-03-17)
 
-No changes reported for this release.
+<section class="packages">
+
+### Packages
+
+<section class="package" id="ml-incr-unreleased">
+
+#### [@stdlib/ml/incr](https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/ml/incr)
+
+<details>
+
+<section class="issues">
+
+##### Closed Issues
+
+This release closes the following issue:
+
+[#6083](https://github.com/stdlib-js/stdlib/issues/6083)
+
+</section>
+
+<!-- /.issues -->
+
+</details>
+
+</section>
+
+<!-- /.package -->
+
+</section>
+
+<!-- /.packages -->
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#6083](https://github.com/stdlib-js/stdlib/issues/6083)
+
+</section>
+
+<!-- /.issues -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 2 people contributed to this release. Thank you to the following contributors:
+
+-   Aayush Khanna
+-   satansin123
+
+</section>
+
+<!-- /.contributors -->
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`21cdb49`](https://github.com/stdlib-js/stdlib/commit/21cdb496f2a3fafe672022e1be0e261949f88a27) - **chore:** fix EditorConfig lint errors [(#6086)](https://github.com/stdlib-js/stdlib/pull/6086) _(by satansin123, Aayush Khanna, stdlib-bot)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
 
 </section>
 
