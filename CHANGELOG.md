@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`05bab5d`](https://github.com/stdlib-js/stdlib/commit/05bab5d60d50b2b04b068f0d1b9a47a22cfb5f40) - add `ml/base/kmeans/algorithm-resolve-enum` [(#12129)](https://github.com/stdlib-js/stdlib/pull/12129)
 -   [`bd64703`](https://github.com/stdlib-js/stdlib/commit/bd64703e350a3509167c53d3b84e71715974c587) - add `ml/base/kmeans/algorithm-resolve-str` [(#12128)](https://github.com/stdlib-js/stdlib/pull/12128)
 -   [`11246cd`](https://github.com/stdlib-js/stdlib/commit/11246cdefdc5fa8effe2585e4c574255a28bc0d6) - add `ml/base/kmeans/algorithm-str2enum` and `ml/base/kmeans/algorithm-enum2str` [(#12119)](https://github.com/stdlib-js/stdlib/pull/12119)
 -   [`778625e`](https://github.com/stdlib-js/stdlib/commit/778625efbc2976f4c451f89df7ee0a1e4b534fe8) - add `ml/base/kmeans/algorithms` [(#10796)](https://github.com/stdlib-js/stdlib/pull/10796)
@@ -36,6 +37,7 @@ A total of 3 issues were closed in this release:
 
 <details>
 
+-   [`05bab5d`](https://github.com/stdlib-js/stdlib/commit/05bab5d60d50b2b04b068f0d1b9a47a22cfb5f40) - **feat:** add `ml/base/kmeans/algorithm-resolve-enum` [(#12129)](https://github.com/stdlib-js/stdlib/pull/12129) _(by Nakul Krishnakumar)_
 -   [`bd64703`](https://github.com/stdlib-js/stdlib/commit/bd64703e350a3509167c53d3b84e71715974c587) - **feat:** add `ml/base/kmeans/algorithm-resolve-str` [(#12128)](https://github.com/stdlib-js/stdlib/pull/12128) _(by Nakul Krishnakumar)_
 -   [`11246cd`](https://github.com/stdlib-js/stdlib/commit/11246cdefdc5fa8effe2585e4c574255a28bc0d6) - **feat:** add `ml/base/kmeans/algorithm-str2enum` and `ml/base/kmeans/algorithm-enum2str` [(#12119)](https://github.com/stdlib-js/stdlib/pull/12119) _(by Nakul Krishnakumar)_
 -   [`778625e`](https://github.com/stdlib-js/stdlib/commit/778625efbc2976f4c451f89df7ee0a1e4b534fe8) - **feat:** add `ml/base/kmeans/algorithms` [(#10796)](https://github.com/stdlib-js/stdlib/pull/10796) _(by Nakul Krishnakumar, Athan Reines)_
