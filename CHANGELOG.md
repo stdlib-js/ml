@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-05-11)
+## Unreleased (2026-05-14)
 
 <section class="features">
 
 ### Features
 
+-   [`11246cd`](https://github.com/stdlib-js/stdlib/commit/11246cdefdc5fa8effe2585e4c574255a28bc0d6) - add `ml/base/kmeans/algorithm-str2enum` and `ml/base/kmeans/algorithm-enum2str` [(#12119)](https://github.com/stdlib-js/stdlib/pull/12119)
 -   [`778625e`](https://github.com/stdlib-js/stdlib/commit/778625efbc2976f4c451f89df7ee0a1e4b534fe8) - add `ml/base/kmeans/algorithms` [(#10796)](https://github.com/stdlib-js/stdlib/pull/10796)
 
 </section>
@@ -34,6 +35,7 @@ A total of 3 issues were closed in this release:
 
 <details>
 
+-   [`11246cd`](https://github.com/stdlib-js/stdlib/commit/11246cdefdc5fa8effe2585e4c574255a28bc0d6) - **feat:** add `ml/base/kmeans/algorithm-str2enum` and `ml/base/kmeans/algorithm-enum2str` [(#12119)](https://github.com/stdlib-js/stdlib/pull/12119) _(by Nakul Krishnakumar)_
 -   [`778625e`](https://github.com/stdlib-js/stdlib/commit/778625efbc2976f4c451f89df7ee0a1e4b534fe8) - **feat:** add `ml/base/kmeans/algorithms` [(#10796)](https://github.com/stdlib-js/stdlib/pull/10796) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`f52d446`](https://github.com/stdlib-js/stdlib/commit/f52d446edd5c1f6e05cca574b303f71b3a94b9d2) - **bench:** refactor to use string interpolation in `ml` [(#11608)](https://github.com/stdlib-js/stdlib/pull/11608) _(by Karan Anand)_
 -   [`14fbe2a`](https://github.com/stdlib-js/stdlib/commit/14fbe2a5ced542c4183b6cae8a5d369462a6023a) - **docs:** clean-up TypeScript declarations example code _(by Philipp Burckhardt)_
