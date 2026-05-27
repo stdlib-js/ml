@@ -10,6 +10,8 @@
 
 ### Features
 
+-   [`cb7ba1d`](https://github.com/stdlib-js/stdlib/commit/cb7ba1d058f443190f7354d92fa95217ad43bf3d) - add `ml/base/kmeans/metric-enum2str` [(#10841)](https://github.com/stdlib-js/stdlib/pull/10841)
+-   [`0447203`](https://github.com/stdlib-js/stdlib/commit/04472032147f3d6d90efa855887919eaf539d234) - add `ml/base/kmeans/metric-str2enum` [(#10842)](https://github.com/stdlib-js/stdlib/pull/10842)
 -   [`d2d12a1`](https://github.com/stdlib-js/stdlib/commit/d2d12a1acde1eceee1d9bfd3f8b142575b134f45) - add `ml/base/kmeans/metrics` [(#10714)](https://github.com/stdlib-js/stdlib/pull/10714)
 -   [`05bab5d`](https://github.com/stdlib-js/stdlib/commit/05bab5d60d50b2b04b068f0d1b9a47a22cfb5f40) - add `ml/base/kmeans/algorithm-resolve-enum` [(#12129)](https://github.com/stdlib-js/stdlib/pull/12129)
 -   [`bd64703`](https://github.com/stdlib-js/stdlib/commit/bd64703e350a3509167c53d3b84e71715974c587) - add `ml/base/kmeans/algorithm-resolve-str` [(#12128)](https://github.com/stdlib-js/stdlib/pull/12128)
@@ -38,6 +40,8 @@ A total of 3 issues were closed in this release:
 
 <details>
 
+-   [`cb7ba1d`](https://github.com/stdlib-js/stdlib/commit/cb7ba1d058f443190f7354d92fa95217ad43bf3d) - **feat:** add `ml/base/kmeans/metric-enum2str` [(#10841)](https://github.com/stdlib-js/stdlib/pull/10841) _(by Nakul Krishnakumar)_
+-   [`0447203`](https://github.com/stdlib-js/stdlib/commit/04472032147f3d6d90efa855887919eaf539d234) - **feat:** add `ml/base/kmeans/metric-str2enum` [(#10842)](https://github.com/stdlib-js/stdlib/pull/10842) _(by Nakul Krishnakumar)_
 -   [`d2d12a1`](https://github.com/stdlib-js/stdlib/commit/d2d12a1acde1eceee1d9bfd3f8b142575b134f45) - **feat:** add `ml/base/kmeans/metrics` [(#10714)](https://github.com/stdlib-js/stdlib/pull/10714) _(by Nakul Krishnakumar)_
 -   [`05bab5d`](https://github.com/stdlib-js/stdlib/commit/05bab5d60d50b2b04b068f0d1b9a47a22cfb5f40) - **feat:** add `ml/base/kmeans/algorithm-resolve-enum` [(#12129)](https://github.com/stdlib-js/stdlib/pull/12129) _(by Nakul Krishnakumar)_
 -   [`bd64703`](https://github.com/stdlib-js/stdlib/commit/bd64703e350a3509167c53d3b84e71715974c587) - **feat:** add `ml/base/kmeans/algorithm-resolve-str` [(#12128)](https://github.com/stdlib-js/stdlib/pull/12128) _(by Nakul Krishnakumar)_
