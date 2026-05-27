@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`5f87d71`](https://github.com/stdlib-js/stdlib/commit/5f87d71aba048089e5e799e071d53520af298dc7) - add `ml/base/kmeans/metric-resolve-str` [(#12322)](https://github.com/stdlib-js/stdlib/pull/12322)
 -   [`cb7ba1d`](https://github.com/stdlib-js/stdlib/commit/cb7ba1d058f443190f7354d92fa95217ad43bf3d) - add `ml/base/kmeans/metric-enum2str` [(#10841)](https://github.com/stdlib-js/stdlib/pull/10841)
 -   [`0447203`](https://github.com/stdlib-js/stdlib/commit/04472032147f3d6d90efa855887919eaf539d234) - add `ml/base/kmeans/metric-str2enum` [(#10842)](https://github.com/stdlib-js/stdlib/pull/10842)
 -   [`d2d12a1`](https://github.com/stdlib-js/stdlib/commit/d2d12a1acde1eceee1d9bfd3f8b142575b134f45) - add `ml/base/kmeans/metrics` [(#10714)](https://github.com/stdlib-js/stdlib/pull/10714)
@@ -40,6 +41,7 @@ A total of 3 issues were closed in this release:
 
 <details>
 
+-   [`5f87d71`](https://github.com/stdlib-js/stdlib/commit/5f87d71aba048089e5e799e071d53520af298dc7) - **feat:** add `ml/base/kmeans/metric-resolve-str` [(#12322)](https://github.com/stdlib-js/stdlib/pull/12322) _(by Nakul Krishnakumar)_
 -   [`cb7ba1d`](https://github.com/stdlib-js/stdlib/commit/cb7ba1d058f443190f7354d92fa95217ad43bf3d) - **feat:** add `ml/base/kmeans/metric-enum2str` [(#10841)](https://github.com/stdlib-js/stdlib/pull/10841) _(by Nakul Krishnakumar)_
 -   [`0447203`](https://github.com/stdlib-js/stdlib/commit/04472032147f3d6d90efa855887919eaf539d234) - **feat:** add `ml/base/kmeans/metric-str2enum` [(#10842)](https://github.com/stdlib-js/stdlib/pull/10842) _(by Nakul Krishnakumar)_
 -   [`d2d12a1`](https://github.com/stdlib-js/stdlib/commit/d2d12a1acde1eceee1d9bfd3f8b142575b134f45) - **feat:** add `ml/base/kmeans/metrics` [(#10714)](https://github.com/stdlib-js/stdlib/pull/10714) _(by Nakul Krishnakumar)_
