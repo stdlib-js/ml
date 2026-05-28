@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-05-27)
+## Unreleased (2026-05-28)
 
 <section class="features">
 
@@ -42,6 +42,7 @@ A total of 3 issues were closed in this release:
 
 <details>
 
+-   [`d69f7f9`](https://github.com/stdlib-js/stdlib/commit/d69f7f9f6cf71bd4f158f57d715eba0f19b036dc) - **docs:** fix text wrapping in repl text file [(#12333)](https://github.com/stdlib-js/stdlib/pull/12333) _(by Philipp Burckhardt)_
 -   [`58d7eb2`](https://github.com/stdlib-js/stdlib/commit/58d7eb2d62b50ed74d4d23ad1028b4c6c49dda67) - **feat:** add `ml/base/kmeans/metric-resolve-enum` [(#12321)](https://github.com/stdlib-js/stdlib/pull/12321) _(by Nakul Krishnakumar)_
 -   [`5f87d71`](https://github.com/stdlib-js/stdlib/commit/5f87d71aba048089e5e799e071d53520af298dc7) - **feat:** add `ml/base/kmeans/metric-resolve-str` [(#12322)](https://github.com/stdlib-js/stdlib/pull/12322) _(by Nakul Krishnakumar)_
 -   [`cb7ba1d`](https://github.com/stdlib-js/stdlib/commit/cb7ba1d058f443190f7354d92fa95217ad43bf3d) - **feat:** add `ml/base/kmeans/metric-enum2str` [(#10841)](https://github.com/stdlib-js/stdlib/pull/10841) _(by Nakul Krishnakumar)_
