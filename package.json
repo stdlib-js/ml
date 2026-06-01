@@ -50,6 +50,8 @@
   },
   "devDependencies": {
     "@stdlib/bench": "github:stdlib-js/bench#main",
+    "@stdlib/dstructs": "github:stdlib-js/dstructs#main",
+    "@stdlib/number": "github:stdlib-js/number#main",
     "@stdlib/object": "github:stdlib-js/object#main",
     "@stdlib/plot": "github:stdlib-js/plot#main",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
