@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-07)
+## Unreleased (2026-07-08)
 
 <section class="features">
 
@@ -21,6 +21,7 @@
 
 ### Bug Fixes
 
+-   [`7eb1970`](https://github.com/stdlib-js/stdlib/commit/7eb19700283512cdc1b3567af854dcf031a249e9) - rename enum to match conventions [(#13378)](https://github.com/stdlib-js/stdlib/pull/13378)
 -   [`e6cc42b`](https://github.com/stdlib-js/stdlib/commit/e6cc42bab0268753252236d0e7511c97443754cc) - correct typo in enum name and fix C examples [(#13088)](https://github.com/stdlib-js/stdlib/pull/13088)
 
 </section>
@@ -33,6 +34,7 @@
 
 <details>
 
+-   [`7eb1970`](https://github.com/stdlib-js/stdlib/commit/7eb19700283512cdc1b3567af854dcf031a249e9) - **fix:** rename enum to match conventions [(#13378)](https://github.com/stdlib-js/stdlib/pull/13378) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`3148fe6`](https://github.com/stdlib-js/stdlib/commit/3148fe6e5cf8bd2124fdce7c0392a72957ce3644) - **feat:** add `ml/base/sgd-classification/loss-functions` [(#13333)](https://github.com/stdlib-js/stdlib/pull/13333) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`e6cc42b`](https://github.com/stdlib-js/stdlib/commit/e6cc42bab0268753252236d0e7511c97443754cc) - **fix:** correct typo in enum name and fix C examples [(#13088)](https://github.com/stdlib-js/stdlib/pull/13088) _(by anee3)_
 -   [`0f81ad2`](https://github.com/stdlib-js/stdlib/commit/0f81ad2fd3441f93d03b305c65fe500155bda08c) - **bench:** fix description and fix JSDoc annotation [(#13090)](https://github.com/stdlib-js/stdlib/pull/13090) _(by Philipp Burckhardt)_
