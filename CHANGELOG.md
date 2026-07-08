@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`aad2ac4`](https://github.com/stdlib-js/stdlib/commit/aad2ac4f91a7653c3a740ca714e241d518435c76) - add `ml/base/sgd-classification/learning-rates` [(#13377)](https://github.com/stdlib-js/stdlib/pull/13377)
 -   [`3148fe6`](https://github.com/stdlib-js/stdlib/commit/3148fe6e5cf8bd2124fdce7c0392a72957ce3644) - add `ml/base/sgd-classification/loss-functions` [(#13333)](https://github.com/stdlib-js/stdlib/pull/13333)
 -   [`187ce19`](https://github.com/stdlib-js/stdlib/commit/187ce19ede0be1305a0b25cb859425450d2078c9) - add `ml/strided/dkmeans-distance` [(#13062)](https://github.com/stdlib-js/stdlib/pull/13062)
 
@@ -34,6 +35,7 @@
 
 <details>
 
+-   [`aad2ac4`](https://github.com/stdlib-js/stdlib/commit/aad2ac4f91a7653c3a740ca714e241d518435c76) - **feat:** add `ml/base/sgd-classification/learning-rates` [(#13377)](https://github.com/stdlib-js/stdlib/pull/13377) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`7eb1970`](https://github.com/stdlib-js/stdlib/commit/7eb19700283512cdc1b3567af854dcf031a249e9) - **fix:** rename enum to match conventions [(#13378)](https://github.com/stdlib-js/stdlib/pull/13378) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`3148fe6`](https://github.com/stdlib-js/stdlib/commit/3148fe6e5cf8bd2124fdce7c0392a72957ce3644) - **feat:** add `ml/base/sgd-classification/loss-functions` [(#13333)](https://github.com/stdlib-js/stdlib/pull/13333) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`e6cc42b`](https://github.com/stdlib-js/stdlib/commit/e6cc42bab0268753252236d0e7511c97443754cc) - **fix:** correct typo in enum name and fix C examples [(#13088)](https://github.com/stdlib-js/stdlib/pull/13088) _(by anee3)_
