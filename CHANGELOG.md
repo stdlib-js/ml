@@ -35,6 +35,7 @@
 
 <details>
 
+-   [`945328a`](https://github.com/stdlib-js/stdlib/commit/945328aa14e710f4b828b8fa303173c660c77817) - **chore:** clean-up [(#13390)](https://github.com/stdlib-js/stdlib/pull/13390) _(by Philipp Burckhardt)_
 -   [`9757a36`](https://github.com/stdlib-js/stdlib/commit/9757a36aac2fb6d734ccab64a058bcde6f8aeaeb) - **chore:** clean-up [(#13373)](https://github.com/stdlib-js/stdlib/pull/13373) _(by Philipp Burckhardt, Athan Reines)_
 -   [`aad2ac4`](https://github.com/stdlib-js/stdlib/commit/aad2ac4f91a7653c3a740ca714e241d518435c76) - **feat:** add `ml/base/sgd-classification/learning-rates` [(#13377)](https://github.com/stdlib-js/stdlib/pull/13377) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`7eb1970`](https://github.com/stdlib-js/stdlib/commit/7eb19700283512cdc1b3567af854dcf031a249e9) - **fix:** rename enum to match conventions [(#13378)](https://github.com/stdlib-js/stdlib/pull/13378) _(by Nakul Krishnakumar, Athan Reines)_
