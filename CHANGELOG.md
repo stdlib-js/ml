@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`dc0fcd8`](https://github.com/stdlib-js/stdlib/commit/dc0fcd8b78d3b74de8a0efea9b993b05ef9066dc) - add `ml/base/sgd-classification/learning-rate-resolve-str` [(#13475)](https://github.com/stdlib-js/stdlib/pull/13475)
 -   [`9d3df2f`](https://github.com/stdlib-js/stdlib/commit/9d3df2f3f662fd9ac26c5209b42616914aef2d9e) - add utilities for resolving learning rate enumeration constants [(#13429)](https://github.com/stdlib-js/stdlib/pull/13429)
 -   [`e9060a2`](https://github.com/stdlib-js/stdlib/commit/e9060a2f939a12429e5f64d8f18e55ddf0abe702) - add utilities for resolving loss function enumeration constants [(#13430)](https://github.com/stdlib-js/stdlib/pull/13430)
 -   [`aad2ac4`](https://github.com/stdlib-js/stdlib/commit/aad2ac4f91a7653c3a740ca714e241d518435c76) - add `ml/base/sgd-classification/learning-rates` [(#13377)](https://github.com/stdlib-js/stdlib/pull/13377)
@@ -37,6 +38,7 @@
 
 <details>
 
+-   [`dc0fcd8`](https://github.com/stdlib-js/stdlib/commit/dc0fcd8b78d3b74de8a0efea9b993b05ef9066dc) - **feat:** add `ml/base/sgd-classification/learning-rate-resolve-str` [(#13475)](https://github.com/stdlib-js/stdlib/pull/13475) _(by Nakul Krishnakumar)_
 -   [`9d3df2f`](https://github.com/stdlib-js/stdlib/commit/9d3df2f3f662fd9ac26c5209b42616914aef2d9e) - **feat:** add utilities for resolving learning rate enumeration constants [(#13429)](https://github.com/stdlib-js/stdlib/pull/13429) _(by Nakul Krishnakumar)_
 -   [`e9060a2`](https://github.com/stdlib-js/stdlib/commit/e9060a2f939a12429e5f64d8f18e55ddf0abe702) - **feat:** add utilities for resolving loss function enumeration constants [(#13430)](https://github.com/stdlib-js/stdlib/pull/13430) _(by Nakul Krishnakumar)_
 -   [`945328a`](https://github.com/stdlib-js/stdlib/commit/945328aa14e710f4b828b8fa303173c660c77817) - **chore:** clean-up [(#13390)](https://github.com/stdlib-js/stdlib/pull/13390) _(by Philipp Burckhardt)_
