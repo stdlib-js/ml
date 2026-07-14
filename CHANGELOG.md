@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`d7320ba`](https://github.com/stdlib-js/stdlib/commit/d7320bac6a7847b367881acd98945c9a8d2c1742) - add `ml/base/sgd-classification/learning-rate-resolve-enum` [(#13474)](https://github.com/stdlib-js/stdlib/pull/13474)
 -   [`4e18818`](https://github.com/stdlib-js/stdlib/commit/4e18818ec241adaea00ea63811e1a1a1ae847991) - add `ml/base/sgd-classification/loss-function-resolve-enum` [(#13473)](https://github.com/stdlib-js/stdlib/pull/13473)
 -   [`f547a09`](https://github.com/stdlib-js/stdlib/commit/f547a090220849e75e168e4ebee67fc91c94048e) - add `ml/base/sgd-classification/loss-function-resolve-str` [(#13471)](https://github.com/stdlib-js/stdlib/pull/13471)
 -   [`dc0fcd8`](https://github.com/stdlib-js/stdlib/commit/dc0fcd8b78d3b74de8a0efea9b993b05ef9066dc) - add `ml/base/sgd-classification/learning-rate-resolve-str` [(#13475)](https://github.com/stdlib-js/stdlib/pull/13475)
@@ -40,6 +41,7 @@
 
 <details>
 
+-   [`d7320ba`](https://github.com/stdlib-js/stdlib/commit/d7320bac6a7847b367881acd98945c9a8d2c1742) - **feat:** add `ml/base/sgd-classification/learning-rate-resolve-enum` [(#13474)](https://github.com/stdlib-js/stdlib/pull/13474) _(by Nakul Krishnakumar)_
 -   [`4e18818`](https://github.com/stdlib-js/stdlib/commit/4e18818ec241adaea00ea63811e1a1a1ae847991) - **feat:** add `ml/base/sgd-classification/loss-function-resolve-enum` [(#13473)](https://github.com/stdlib-js/stdlib/pull/13473) _(by Nakul Krishnakumar)_
 -   [`f547a09`](https://github.com/stdlib-js/stdlib/commit/f547a090220849e75e168e4ebee67fc91c94048e) - **feat:** add `ml/base/sgd-classification/loss-function-resolve-str` [(#13471)](https://github.com/stdlib-js/stdlib/pull/13471) _(by Nakul Krishnakumar)_
 -   [`dc0fcd8`](https://github.com/stdlib-js/stdlib/commit/dc0fcd8b78d3b74de8a0efea9b993b05ef9066dc) - **feat:** add `ml/base/sgd-classification/learning-rate-resolve-str` [(#13475)](https://github.com/stdlib-js/stdlib/pull/13475) _(by Nakul Krishnakumar)_
