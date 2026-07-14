@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-09)
+## Unreleased (2026-07-14)
 
 <section class="features">
 
 ### Features
 
+-   [`e9060a2`](https://github.com/stdlib-js/stdlib/commit/e9060a2f939a12429e5f64d8f18e55ddf0abe702) - add utilities for resolving loss function enumeration constants [(#13430)](https://github.com/stdlib-js/stdlib/pull/13430)
 -   [`aad2ac4`](https://github.com/stdlib-js/stdlib/commit/aad2ac4f91a7653c3a740ca714e241d518435c76) - add `ml/base/sgd-classification/learning-rates` [(#13377)](https://github.com/stdlib-js/stdlib/pull/13377)
 -   [`3148fe6`](https://github.com/stdlib-js/stdlib/commit/3148fe6e5cf8bd2124fdce7c0392a72957ce3644) - add `ml/base/sgd-classification/loss-functions` [(#13333)](https://github.com/stdlib-js/stdlib/pull/13333)
 -   [`187ce19`](https://github.com/stdlib-js/stdlib/commit/187ce19ede0be1305a0b25cb859425450d2078c9) - add `ml/strided/dkmeans-distance` [(#13062)](https://github.com/stdlib-js/stdlib/pull/13062)
@@ -35,6 +36,7 @@
 
 <details>
 
+-   [`e9060a2`](https://github.com/stdlib-js/stdlib/commit/e9060a2f939a12429e5f64d8f18e55ddf0abe702) - **feat:** add utilities for resolving loss function enumeration constants [(#13430)](https://github.com/stdlib-js/stdlib/pull/13430) _(by Nakul Krishnakumar)_
 -   [`945328a`](https://github.com/stdlib-js/stdlib/commit/945328aa14e710f4b828b8fa303173c660c77817) - **chore:** clean-up [(#13390)](https://github.com/stdlib-js/stdlib/pull/13390) _(by Philipp Burckhardt)_
 -   [`9757a36`](https://github.com/stdlib-js/stdlib/commit/9757a36aac2fb6d734ccab64a058bcde6f8aeaeb) - **chore:** clean-up [(#13373)](https://github.com/stdlib-js/stdlib/pull/13373) _(by Philipp Burckhardt, Athan Reines)_
 -   [`aad2ac4`](https://github.com/stdlib-js/stdlib/commit/aad2ac4f91a7653c3a740ca714e241d518435c76) - **feat:** add `ml/base/sgd-classification/learning-rates` [(#13377)](https://github.com/stdlib-js/stdlib/pull/13377) _(by Nakul Krishnakumar, Athan Reines)_
