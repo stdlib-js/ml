@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@stdlib/bench": "github:stdlib-js/bench#main",
+    "@stdlib/console": "github:stdlib-js/console#main",
     "@stdlib/dstructs": "github:stdlib-js/dstructs#main",
     "@stdlib/number": "github:stdlib-js/number#main",
     "@stdlib/object": "github:stdlib-js/object#main",

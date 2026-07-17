@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-14)
+## Unreleased (2026-07-17)
 
 <section class="features">
 
 ### Features
 
+-   [`1e6bfce`](https://github.com/stdlib-js/stdlib/commit/1e6bfceb5c1ec2996798a07d1f856c60fcdd8a57) - add `ml/base/loss/float64/squared-epsilon-insensitive-gradient` [(#13498)](https://github.com/stdlib-js/stdlib/pull/13498)
 -   [`d7320ba`](https://github.com/stdlib-js/stdlib/commit/d7320bac6a7847b367881acd98945c9a8d2c1742) - add `ml/base/sgd-classification/learning-rate-resolve-enum` [(#13474)](https://github.com/stdlib-js/stdlib/pull/13474)
 -   [`4e18818`](https://github.com/stdlib-js/stdlib/commit/4e18818ec241adaea00ea63811e1a1a1ae847991) - add `ml/base/sgd-classification/loss-function-resolve-enum` [(#13473)](https://github.com/stdlib-js/stdlib/pull/13473)
 -   [`f547a09`](https://github.com/stdlib-js/stdlib/commit/f547a090220849e75e168e4ebee67fc91c94048e) - add `ml/base/sgd-classification/loss-function-resolve-str` [(#13471)](https://github.com/stdlib-js/stdlib/pull/13471)
@@ -41,6 +42,7 @@
 
 <details>
 
+-   [`1e6bfce`](https://github.com/stdlib-js/stdlib/commit/1e6bfceb5c1ec2996798a07d1f856c60fcdd8a57) - **feat:** add `ml/base/loss/float64/squared-epsilon-insensitive-gradient` [(#13498)](https://github.com/stdlib-js/stdlib/pull/13498) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`d7320ba`](https://github.com/stdlib-js/stdlib/commit/d7320bac6a7847b367881acd98945c9a8d2c1742) - **feat:** add `ml/base/sgd-classification/learning-rate-resolve-enum` [(#13474)](https://github.com/stdlib-js/stdlib/pull/13474) _(by Nakul Krishnakumar)_
 -   [`4e18818`](https://github.com/stdlib-js/stdlib/commit/4e18818ec241adaea00ea63811e1a1a1ae847991) - **feat:** add `ml/base/sgd-classification/loss-function-resolve-enum` [(#13473)](https://github.com/stdlib-js/stdlib/pull/13473) _(by Nakul Krishnakumar)_
 -   [`f547a09`](https://github.com/stdlib-js/stdlib/commit/f547a090220849e75e168e4ebee67fc91c94048e) - **feat:** add `ml/base/sgd-classification/loss-function-resolve-str` [(#13471)](https://github.com/stdlib-js/stdlib/pull/13471) _(by Nakul Krishnakumar)_
