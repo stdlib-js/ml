@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`d62914b`](https://github.com/stdlib-js/stdlib/commit/d62914b794fbc08c63041f7229189f6d238556d7) - add `ml/base/loss/float64/epsilon-insensitive-gradient` [(#13249)](https://github.com/stdlib-js/stdlib/pull/13249)
 -   [`87ed391`](https://github.com/stdlib-js/stdlib/commit/87ed39172da3a9151ec95c31cb313930146d5e92) - add `ml/base/loss/float64/squared-error-gradient` [(#13363)](https://github.com/stdlib-js/stdlib/pull/13363)
 -   [`1e6bfce`](https://github.com/stdlib-js/stdlib/commit/1e6bfceb5c1ec2996798a07d1f856c60fcdd8a57) - add `ml/base/loss/float64/squared-epsilon-insensitive-gradient` [(#13498)](https://github.com/stdlib-js/stdlib/pull/13498)
 -   [`d7320ba`](https://github.com/stdlib-js/stdlib/commit/d7320bac6a7847b367881acd98945c9a8d2c1742) - add `ml/base/sgd-classification/learning-rate-resolve-enum` [(#13474)](https://github.com/stdlib-js/stdlib/pull/13474)
@@ -43,6 +44,7 @@
 
 <details>
 
+-   [`d62914b`](https://github.com/stdlib-js/stdlib/commit/d62914b794fbc08c63041f7229189f6d238556d7) - **feat:** add `ml/base/loss/float64/epsilon-insensitive-gradient` [(#13249)](https://github.com/stdlib-js/stdlib/pull/13249) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`87ed391`](https://github.com/stdlib-js/stdlib/commit/87ed39172da3a9151ec95c31cb313930146d5e92) - **feat:** add `ml/base/loss/float64/squared-error-gradient` [(#13363)](https://github.com/stdlib-js/stdlib/pull/13363) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`1e6bfce`](https://github.com/stdlib-js/stdlib/commit/1e6bfceb5c1ec2996798a07d1f856c60fcdd8a57) - **feat:** add `ml/base/loss/float64/squared-epsilon-insensitive-gradient` [(#13498)](https://github.com/stdlib-js/stdlib/pull/13498) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`d7320ba`](https://github.com/stdlib-js/stdlib/commit/d7320bac6a7847b367881acd98945c9a8d2c1742) - **feat:** add `ml/base/sgd-classification/learning-rate-resolve-enum` [(#13474)](https://github.com/stdlib-js/stdlib/pull/13474) _(by Nakul Krishnakumar)_
