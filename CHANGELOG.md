@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-17)
+## Unreleased (2026-07-18)
 
 <section class="features">
 
@@ -44,6 +44,7 @@
 
 <details>
 
+-   [`4a96d8c`](https://github.com/stdlib-js/stdlib/commit/4a96d8c9dfad79378cf96fa9e046ed9f79ac1d23) - **chore:** clean-up [(#13522)](https://github.com/stdlib-js/stdlib/pull/13522) _(by Philipp Burckhardt, Athan Reines)_
 -   [`d62914b`](https://github.com/stdlib-js/stdlib/commit/d62914b794fbc08c63041f7229189f6d238556d7) - **feat:** add `ml/base/loss/float64/epsilon-insensitive-gradient` [(#13249)](https://github.com/stdlib-js/stdlib/pull/13249) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`87ed391`](https://github.com/stdlib-js/stdlib/commit/87ed39172da3a9151ec95c31cb313930146d5e92) - **feat:** add `ml/base/loss/float64/squared-error-gradient` [(#13363)](https://github.com/stdlib-js/stdlib/pull/13363) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`1e6bfce`](https://github.com/stdlib-js/stdlib/commit/1e6bfceb5c1ec2996798a07d1f856c60fcdd8a57) - **feat:** add `ml/base/loss/float64/squared-epsilon-insensitive-gradient` [(#13498)](https://github.com/stdlib-js/stdlib/pull/13498) _(by Nakul Krishnakumar, Athan Reines)_
