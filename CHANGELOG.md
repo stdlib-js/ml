@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`14bf9e1`](https://github.com/stdlib-js/stdlib/commit/14bf9e1ecf20eed71bb9b77b50e5d51415829684) - add utilities for resolving penalty enumeration constants [(#13636)](https://github.com/stdlib-js/stdlib/pull/13636)
 -   [`9a8f1f3`](https://github.com/stdlib-js/stdlib/commit/9a8f1f38c03291a70107efc6be22b84b3cbbd980) - add `ml/base/loss/float64/modified-huber-gradient` [(#13139)](https://github.com/stdlib-js/stdlib/pull/13139)
 -   [`da9af3d`](https://github.com/stdlib-js/stdlib/commit/da9af3df4a886f27ee592ba1b871fe1faffb98c0) - add `ml/base/sgd-classification/penalties` [(#13623)](https://github.com/stdlib-js/stdlib/pull/13623)
 -   [`d62914b`](https://github.com/stdlib-js/stdlib/commit/d62914b794fbc08c63041f7229189f6d238556d7) - add `ml/base/loss/float64/epsilon-insensitive-gradient` [(#13249)](https://github.com/stdlib-js/stdlib/pull/13249)
@@ -46,6 +47,7 @@
 
 <details>
 
+-   [`14bf9e1`](https://github.com/stdlib-js/stdlib/commit/14bf9e1ecf20eed71bb9b77b50e5d51415829684) - **feat:** add utilities for resolving penalty enumeration constants [(#13636)](https://github.com/stdlib-js/stdlib/pull/13636) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`9a8f1f3`](https://github.com/stdlib-js/stdlib/commit/9a8f1f38c03291a70107efc6be22b84b3cbbd980) - **feat:** add `ml/base/loss/float64/modified-huber-gradient` [(#13139)](https://github.com/stdlib-js/stdlib/pull/13139) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`da9af3d`](https://github.com/stdlib-js/stdlib/commit/da9af3df4a886f27ee592ba1b871fe1faffb98c0) - **feat:** add `ml/base/sgd-classification/penalties` [(#13623)](https://github.com/stdlib-js/stdlib/pull/13623) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`f25221d`](https://github.com/stdlib-js/stdlib/commit/f25221d5fcb5e84cb0ad4951db6f08f254c12d15) - **docs:** update Markdown equation elements _(by stdlib-bot)_
