@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-25)
+## Unreleased (2026-07-26)
 
 <section class="features">
 
@@ -47,6 +47,7 @@
 
 <details>
 
+-   [`b06219c`](https://github.com/stdlib-js/stdlib/commit/b06219c7a1fa57a41fa94841738a83f2d98f62bd) - **chore:** clean-up [(#13653)](https://github.com/stdlib-js/stdlib/pull/13653) _(by Philipp Burckhardt)_
 -   [`14bf9e1`](https://github.com/stdlib-js/stdlib/commit/14bf9e1ecf20eed71bb9b77b50e5d51415829684) - **feat:** add utilities for resolving penalty enumeration constants [(#13636)](https://github.com/stdlib-js/stdlib/pull/13636) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`9a8f1f3`](https://github.com/stdlib-js/stdlib/commit/9a8f1f38c03291a70107efc6be22b84b3cbbd980) - **feat:** add `ml/base/loss/float64/modified-huber-gradient` [(#13139)](https://github.com/stdlib-js/stdlib/pull/13139) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`da9af3d`](https://github.com/stdlib-js/stdlib/commit/da9af3df4a886f27ee592ba1b871fe1faffb98c0) - **feat:** add `ml/base/sgd-classification/penalties` [(#13623)](https://github.com/stdlib-js/stdlib/pull/13623) _(by Nakul Krishnakumar, Athan Reines)_
