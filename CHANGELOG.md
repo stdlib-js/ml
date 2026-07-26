@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`4bc56fc`](https://github.com/stdlib-js/stdlib/commit/4bc56fc55ec80917bcd3410c4ddee664776be53a) - add support for `none` to indicate no regularization [(#13672)](https://github.com/stdlib-js/stdlib/pull/13672)
 -   [`14bf9e1`](https://github.com/stdlib-js/stdlib/commit/14bf9e1ecf20eed71bb9b77b50e5d51415829684) - add utilities for resolving penalty enumeration constants [(#13636)](https://github.com/stdlib-js/stdlib/pull/13636)
 -   [`9a8f1f3`](https://github.com/stdlib-js/stdlib/commit/9a8f1f38c03291a70107efc6be22b84b3cbbd980) - add `ml/base/loss/float64/modified-huber-gradient` [(#13139)](https://github.com/stdlib-js/stdlib/pull/13139)
 -   [`da9af3d`](https://github.com/stdlib-js/stdlib/commit/da9af3df4a886f27ee592ba1b871fe1faffb98c0) - add `ml/base/sgd-classification/penalties` [(#13623)](https://github.com/stdlib-js/stdlib/pull/13623)
@@ -47,6 +48,7 @@
 
 <details>
 
+-   [`4bc56fc`](https://github.com/stdlib-js/stdlib/commit/4bc56fc55ec80917bcd3410c4ddee664776be53a) - **feat:** add support for `none` to indicate no regularization [(#13672)](https://github.com/stdlib-js/stdlib/pull/13672) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`b06219c`](https://github.com/stdlib-js/stdlib/commit/b06219c7a1fa57a41fa94841738a83f2d98f62bd) - **chore:** clean-up [(#13653)](https://github.com/stdlib-js/stdlib/pull/13653) _(by Philipp Burckhardt)_
 -   [`14bf9e1`](https://github.com/stdlib-js/stdlib/commit/14bf9e1ecf20eed71bb9b77b50e5d51415829684) - **feat:** add utilities for resolving penalty enumeration constants [(#13636)](https://github.com/stdlib-js/stdlib/pull/13636) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`9a8f1f3`](https://github.com/stdlib-js/stdlib/commit/9a8f1f38c03291a70107efc6be22b84b3cbbd980) - **feat:** add `ml/base/loss/float64/modified-huber-gradient` [(#13139)](https://github.com/stdlib-js/stdlib/pull/13139) _(by Nakul Krishnakumar, Athan Reines)_
