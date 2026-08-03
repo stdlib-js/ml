@@ -4,12 +4,14 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-27)
+## Unreleased (2026-08-03)
 
 <section class="features">
 
 ### Features
 
+-   [`36bce0b`](https://github.com/stdlib-js/stdlib/commit/36bce0ba2aab94ae23c27c0a59ec9942727bbc92) - add `ml/base/loss/float64/squared-hinge-gradient` [(#13192)](https://github.com/stdlib-js/stdlib/pull/13192)
+-   [`84cf3b6`](https://github.com/stdlib-js/stdlib/commit/84cf3b65788b0dff28de1765b309f0ce84a19974) - add `ml/base/sgd`
 -   [`da058d7`](https://github.com/stdlib-js/stdlib/commit/da058d7ee15bdcafaa135ec0a775019119dc8544) - add `ml/base/sgd-classification/penalty-resolve-enum` [(#13670)](https://github.com/stdlib-js/stdlib/pull/13670)
 -   [`e4e3f3f`](https://github.com/stdlib-js/stdlib/commit/e4e3f3f16ff3c8490d17662023252386135f87de) - add `ml/base/sgd-classification/penalty-resolve-str` [(#13669)](https://github.com/stdlib-js/stdlib/pull/13669)
 -   [`4bc56fc`](https://github.com/stdlib-js/stdlib/commit/4bc56fc55ec80917bcd3410c4ddee664776be53a) - add support for `none` to indicate no regularization [(#13672)](https://github.com/stdlib-js/stdlib/pull/13672)
@@ -50,6 +52,10 @@
 
 <details>
 
+-   [`36bce0b`](https://github.com/stdlib-js/stdlib/commit/36bce0ba2aab94ae23c27c0a59ec9942727bbc92) - **feat:** add `ml/base/loss/float64/squared-hinge-gradient` [(#13192)](https://github.com/stdlib-js/stdlib/pull/13192) _(by Nakul Krishnakumar, Athan Reines)_
+-   [`b7a8f64`](https://github.com/stdlib-js/stdlib/commit/b7a8f64edacad5ecfc0359b90b92c140fb5709c0) - **style:** reformat examples _(by Athan Reines, Athan)_
+-   [`84cf3b6`](https://github.com/stdlib-js/stdlib/commit/84cf3b65788b0dff28de1765b309f0ce84a19974) - **feat:** add `ml/base/sgd` _(by nakul-krishnakumar)_
+-   [`b447246`](https://github.com/stdlib-js/stdlib/commit/b44724688210b98a347dd17aa7b7a6086175bbb5) - **remove:** delete `ml/base/sgd-classification/` _(by nakul-krishnakumar)_
 -   [`a103b47`](https://github.com/stdlib-js/stdlib/commit/a103b474ac08bc97bfdeac4674230abc02d17ae5) - **docs:** fix descriptions [(#13696)](https://github.com/stdlib-js/stdlib/pull/13696) _(by Philipp Burckhardt)_
 -   [`da058d7`](https://github.com/stdlib-js/stdlib/commit/da058d7ee15bdcafaa135ec0a775019119dc8544) - **feat:** add `ml/base/sgd-classification/penalty-resolve-enum` [(#13670)](https://github.com/stdlib-js/stdlib/pull/13670) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`e4e3f3f`](https://github.com/stdlib-js/stdlib/commit/e4e3f3f16ff3c8490d17662023252386135f87de) - **feat:** add `ml/base/sgd-classification/penalty-resolve-str` [(#13669)](https://github.com/stdlib-js/stdlib/pull/13669) _(by Nakul Krishnakumar, Athan Reines)_
@@ -89,12 +95,13 @@
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 5 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Nakul Krishnakumar
 -   Philipp Burckhardt
 -   anee3
+-   nakul-krishnakumar
 
 </section>
 
