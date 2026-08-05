@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`b9396e3`](https://github.com/stdlib-js/stdlib/commit/b9396e35463ddbdcedab962ad48b77fe9a3b3bbf) - add `ml/base/loss/float64/hinge-gradient` [(#12216)](https://github.com/stdlib-js/stdlib/pull/12216)
 -   [`36bce0b`](https://github.com/stdlib-js/stdlib/commit/36bce0ba2aab94ae23c27c0a59ec9942727bbc92) - add `ml/base/loss/float64/squared-hinge-gradient` [(#13192)](https://github.com/stdlib-js/stdlib/pull/13192)
 -   [`84cf3b6`](https://github.com/stdlib-js/stdlib/commit/84cf3b65788b0dff28de1765b309f0ce84a19974) - add `ml/base/sgd`
 -   [`da058d7`](https://github.com/stdlib-js/stdlib/commit/da058d7ee15bdcafaa135ec0a775019119dc8544) - add `ml/base/sgd-classification/penalty-resolve-enum` [(#13670)](https://github.com/stdlib-js/stdlib/pull/13670)
@@ -52,6 +53,7 @@
 
 <details>
 
+-   [`b9396e3`](https://github.com/stdlib-js/stdlib/commit/b9396e35463ddbdcedab962ad48b77fe9a3b3bbf) - **feat:** add `ml/base/loss/float64/hinge-gradient` [(#12216)](https://github.com/stdlib-js/stdlib/pull/12216) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`b51ebff`](https://github.com/stdlib-js/stdlib/commit/b51ebff8a15e9d9cf8d9bb64d569d709f45fc994) - **docs:** update Markdown equation elements [(#13928)](https://github.com/stdlib-js/stdlib/pull/13928) _(by stdlib-bot)_
 -   [`c29f266`](https://github.com/stdlib-js/stdlib/commit/c29f2666721970605f799043ee1d92334f7771a7) - **docs:** update Markdown equation elements [(#13901)](https://github.com/stdlib-js/stdlib/pull/13901) _(by stdlib-bot, Athan Reines)_
 -   [`a4682f5`](https://github.com/stdlib-js/stdlib/commit/a4682f5c77b0dceac093817e9bdeec8ef4770e04) - **docs:** fix description [(#13894)](https://github.com/stdlib-js/stdlib/pull/13894) _(by Philipp Burckhardt, Athan Reines)_
