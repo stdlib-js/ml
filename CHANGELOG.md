@@ -10,6 +10,7 @@
 
 ### Features
 
+-   [`866a446`](https://github.com/stdlib-js/stdlib/commit/866a446e07a5cc5ec8b9921c2b197b8407f253b3) - add `ml/base/loss/float64/huber-gradient` [(#13521)](https://github.com/stdlib-js/stdlib/pull/13521)
 -   [`b9396e3`](https://github.com/stdlib-js/stdlib/commit/b9396e35463ddbdcedab962ad48b77fe9a3b3bbf) - add `ml/base/loss/float64/hinge-gradient` [(#12216)](https://github.com/stdlib-js/stdlib/pull/12216)
 -   [`36bce0b`](https://github.com/stdlib-js/stdlib/commit/36bce0ba2aab94ae23c27c0a59ec9942727bbc92) - add `ml/base/loss/float64/squared-hinge-gradient` [(#13192)](https://github.com/stdlib-js/stdlib/pull/13192)
 -   [`84cf3b6`](https://github.com/stdlib-js/stdlib/commit/84cf3b65788b0dff28de1765b309f0ce84a19974) - add `ml/base/sgd`
@@ -53,6 +54,7 @@
 
 <details>
 
+-   [`866a446`](https://github.com/stdlib-js/stdlib/commit/866a446e07a5cc5ec8b9921c2b197b8407f253b3) - **feat:** add `ml/base/loss/float64/huber-gradient` [(#13521)](https://github.com/stdlib-js/stdlib/pull/13521) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`ad9d109`](https://github.com/stdlib-js/stdlib/commit/ad9d1092d73c1635a10bb0ac4400c92dd50722eb) - **chore:** clean-up [(#13949)](https://github.com/stdlib-js/stdlib/pull/13949) _(by Philipp Burckhardt, Athan Reines)_
 -   [`dac85e0`](https://github.com/stdlib-js/stdlib/commit/dac85e0230cd4052f0ec097d58e3372d899782f6) - **docs:** update Markdown equation elements [(#13966)](https://github.com/stdlib-js/stdlib/pull/13966) _(by stdlib-bot, Athan Reines)_
 -   [`b9396e3`](https://github.com/stdlib-js/stdlib/commit/b9396e35463ddbdcedab962ad48b77fe9a3b3bbf) - **feat:** add `ml/base/loss/float64/hinge-gradient` [(#12216)](https://github.com/stdlib-js/stdlib/pull/12216) _(by Nakul Krishnakumar, Athan Reines)_
