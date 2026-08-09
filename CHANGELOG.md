@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-08-07)
+## Unreleased (2026-08-09)
 
 <section class="features">
 
 ### Features
 
+-   [`9bd464a`](https://github.com/stdlib-js/stdlib/commit/9bd464a46d6350b99e6230e59567c72a7130d195) - add `ml/base/sgd/params/struct-factory` [(#13875)](https://github.com/stdlib-js/stdlib/pull/13875)
 -   [`c323de7`](https://github.com/stdlib-js/stdlib/commit/c323de7c3da33ff2718d0447a2f333e23c26c9c8) - add `ml/base/loss/float64/log-gradient` [(#12241)](https://github.com/stdlib-js/stdlib/pull/12241)
 -   [`866a446`](https://github.com/stdlib-js/stdlib/commit/866a446e07a5cc5ec8b9921c2b197b8407f253b3) - add `ml/base/loss/float64/huber-gradient` [(#13521)](https://github.com/stdlib-js/stdlib/pull/13521)
 -   [`b9396e3`](https://github.com/stdlib-js/stdlib/commit/b9396e35463ddbdcedab962ad48b77fe9a3b3bbf) - add `ml/base/loss/float64/hinge-gradient` [(#12216)](https://github.com/stdlib-js/stdlib/pull/12216)
@@ -55,6 +56,7 @@
 
 <details>
 
+-   [`9bd464a`](https://github.com/stdlib-js/stdlib/commit/9bd464a46d6350b99e6230e59567c72a7130d195) - **feat:** add `ml/base/sgd/params/struct-factory` [(#13875)](https://github.com/stdlib-js/stdlib/pull/13875) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`ad94429`](https://github.com/stdlib-js/stdlib/commit/ad944294ccfe76a87926468637863f127fc005c4) - **docs:** update Markdown equation elements [(#13995)](https://github.com/stdlib-js/stdlib/pull/13995) _(by stdlib-bot)_
 -   [`c323de7`](https://github.com/stdlib-js/stdlib/commit/c323de7c3da33ff2718d0447a2f333e23c26c9c8) - **feat:** add `ml/base/loss/float64/log-gradient` [(#12241)](https://github.com/stdlib-js/stdlib/pull/12241) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`866a446`](https://github.com/stdlib-js/stdlib/commit/866a446e07a5cc5ec8b9921c2b197b8407f253b3) - **feat:** add `ml/base/loss/float64/huber-gradient` [(#13521)](https://github.com/stdlib-js/stdlib/pull/13521) _(by Nakul Krishnakumar, Athan Reines)_
