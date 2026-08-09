@@ -56,6 +56,7 @@
 
 <details>
 
+-   [`b3d9447`](https://github.com/stdlib-js/stdlib/commit/b3d9447923c16fc51f12c6ea45909bb29b4aab42) - **chore:** clean-up [(#14098)](https://github.com/stdlib-js/stdlib/pull/14098) _(by Philipp Burckhardt)_
 -   [`9bd464a`](https://github.com/stdlib-js/stdlib/commit/9bd464a46d6350b99e6230e59567c72a7130d195) - **feat:** add `ml/base/sgd/params/struct-factory` [(#13875)](https://github.com/stdlib-js/stdlib/pull/13875) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`ad94429`](https://github.com/stdlib-js/stdlib/commit/ad944294ccfe76a87926468637863f127fc005c4) - **docs:** update Markdown equation elements [(#13995)](https://github.com/stdlib-js/stdlib/pull/13995) _(by stdlib-bot)_
 -   [`c323de7`](https://github.com/stdlib-js/stdlib/commit/c323de7c3da33ff2718d0447a2f333e23c26c9c8) - **feat:** add `ml/base/loss/float64/log-gradient` [(#12241)](https://github.com/stdlib-js/stdlib/pull/12241) _(by Nakul Krishnakumar, Athan Reines)_
