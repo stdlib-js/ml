@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-08-09)
+## Unreleased (2026-08-13)
 
 <section class="features">
 
@@ -56,6 +56,7 @@
 
 <details>
 
+-   [`fa12894`](https://github.com/stdlib-js/stdlib/commit/fa1289423b946fdc89e6c26236097a52093a88e8) - **docs:** fix comment and example [(#14222)](https://github.com/stdlib-js/stdlib/pull/14222) _(by Philipp Burckhardt)_
 -   [`b3d9447`](https://github.com/stdlib-js/stdlib/commit/b3d9447923c16fc51f12c6ea45909bb29b4aab42) - **chore:** clean-up [(#14098)](https://github.com/stdlib-js/stdlib/pull/14098) _(by Philipp Burckhardt)_
 -   [`9bd464a`](https://github.com/stdlib-js/stdlib/commit/9bd464a46d6350b99e6230e59567c72a7130d195) - **feat:** add `ml/base/sgd/params/struct-factory` [(#13875)](https://github.com/stdlib-js/stdlib/pull/13875) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`ad94429`](https://github.com/stdlib-js/stdlib/commit/ad944294ccfe76a87926468637863f127fc005c4) - **docs:** update Markdown equation elements [(#13995)](https://github.com/stdlib-js/stdlib/pull/13995) _(by stdlib-bot)_
