@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-08-18)
+## Unreleased (2026-08-22)
 
 <section class="features">
 
 ### Features
 
+-   [`8e32669`](https://github.com/stdlib-js/stdlib/commit/8e326691965095235a5aaf78e5a75dccc837309b) - add `ml/base/sgd/params/*` [(#13968)](https://github.com/stdlib-js/stdlib/pull/13968)
 -   [`9bd464a`](https://github.com/stdlib-js/stdlib/commit/9bd464a46d6350b99e6230e59567c72a7130d195) - add `ml/base/sgd/params/struct-factory` [(#13875)](https://github.com/stdlib-js/stdlib/pull/13875)
 -   [`c323de7`](https://github.com/stdlib-js/stdlib/commit/c323de7c3da33ff2718d0447a2f333e23c26c9c8) - add `ml/base/loss/float64/log-gradient` [(#12241)](https://github.com/stdlib-js/stdlib/pull/12241)
 -   [`866a446`](https://github.com/stdlib-js/stdlib/commit/866a446e07a5cc5ec8b9921c2b197b8407f253b3) - add `ml/base/loss/float64/huber-gradient` [(#13521)](https://github.com/stdlib-js/stdlib/pull/13521)
@@ -56,6 +57,7 @@
 
 <details>
 
+-   [`8e32669`](https://github.com/stdlib-js/stdlib/commit/8e326691965095235a5aaf78e5a75dccc837309b) - **feat:** add `ml/base/sgd/params/*` [(#13968)](https://github.com/stdlib-js/stdlib/pull/13968) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`fa12894`](https://github.com/stdlib-js/stdlib/commit/fa1289423b946fdc89e6c26236097a52093a88e8) - **docs:** fix comment and example [(#14222)](https://github.com/stdlib-js/stdlib/pull/14222) _(by Philipp Burckhardt)_
 -   [`b3d9447`](https://github.com/stdlib-js/stdlib/commit/b3d9447923c16fc51f12c6ea45909bb29b4aab42) - **chore:** clean-up [(#14098)](https://github.com/stdlib-js/stdlib/pull/14098) _(by Philipp Burckhardt)_
 -   [`9bd464a`](https://github.com/stdlib-js/stdlib/commit/9bd464a46d6350b99e6230e59567c72a7130d195) - **feat:** add `ml/base/sgd/params/struct-factory` [(#13875)](https://github.com/stdlib-js/stdlib/pull/13875) _(by Nakul Krishnakumar, Athan Reines)_
