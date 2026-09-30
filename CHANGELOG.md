@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-08-22)
+## Unreleased (2026-09-30)
 
 <section class="features">
 
@@ -57,6 +57,7 @@
 
 <details>
 
+-   [`ec5c016`](https://github.com/stdlib-js/stdlib/commit/ec5c01675c318edf76f655dad057aceed7efacc0) - **chore:** clean-up [(#15680)](https://github.com/stdlib-js/stdlib/pull/15680) _(by Philipp Burckhardt)_
 -   [`97bc924`](https://github.com/stdlib-js/stdlib/commit/97bc924214657ff00bcfbb99cbdb34447f52a01a) - **docs:** fix examples [(#14526)](https://github.com/stdlib-js/stdlib/pull/14526) _(by Philipp Burckhardt)_
 -   [`8e32669`](https://github.com/stdlib-js/stdlib/commit/8e326691965095235a5aaf78e5a75dccc837309b) - **feat:** add `ml/base/sgd/params/*` [(#13968)](https://github.com/stdlib-js/stdlib/pull/13968) _(by Nakul Krishnakumar, Athan Reines)_
 -   [`fa12894`](https://github.com/stdlib-js/stdlib/commit/fa1289423b946fdc89e6c26236097a52093a88e8) - **docs:** fix comment and example [(#14222)](https://github.com/stdlib-js/stdlib/pull/14222) _(by Philipp Burckhardt)_
